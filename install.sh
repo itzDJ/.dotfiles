@@ -1,5 +1,6 @@
 #!/bin/bash
 # Install script for dotfiles
+# TODO Script is currently for installing on new machine; make it work for updating as well
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -16,6 +17,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         echo "Homebrew found; updating..."
         brew update && brew upgrade --greedy
     fi
+
+    # Install git and clone dotfiles
+    echo "Installing git..."
+    brew install git
+    echo "Cloning dotfiles..."
+    git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install Brewfile
     echo "Installing homebrew packages..."
@@ -48,6 +55,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo pacman -S zsh
     chsh -s /usr/bin/zsh
 
+    # Install git and clone dotfiles
+    echo "Installing git..."
+    sudo pacman -S git
+    echo "Cloning dotfiles..."
+    git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
+
     # Install pacman packages
     sudo pacman -S --needed - < pacman_packages.txt
 
@@ -74,8 +87,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mv ~/.dotfiles/nvim ~/.config/nvim
     echo "Run 'nvim' to finish setup"
 
-    # Install WM config (hyprland)
-    # TODO
+    # Install DE/WM config (hyprland)
+    # TODO These need to overwrite existing files
+    echo "Installing DE/WM config..."
+    mv ~/.dotfiles/hypr ~/.config/hypr
+    mv ~/.dotfiles/waybar ~/.config/waybar
+    mv ~/.dotfiles/wofi ~/.config/wofi
 else
     echo "OS not supported"
     exit 1
