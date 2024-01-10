@@ -1,5 +1,9 @@
 # DJ's dotfiles
 
+## Pre-reqs (git)
+
+Both Mac and Linux require git to download this file and run the command below. For macOS, attempt to run `git` in the macOS terminal to download developer tools, which includes git. For Linux, simply install git through the built in package manager.
+
 ## Install
 
 Clone into `$HOME` directory and run install script
