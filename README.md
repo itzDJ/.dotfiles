@@ -2,10 +2,10 @@
 
 ## Install
 
-Clone into your `$HOME` directory or `~` and run install script
+Clone into `$HOME` directory and run install script
 
 ```bash
-git clone --recurse-submodules https://github.com/itzDJ/.dotfiles ~ && /bin/bash ~/.dotfiles/install.sh
+git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles && /bin/bash ~/.dotfiles/install.sh
 ```
 
 ## Setup steps (should only be needed once)
