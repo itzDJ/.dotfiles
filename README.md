@@ -10,6 +10,8 @@ bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
 
 ### Create .dotfiles git repo
 
+Consider switching from standard git repo to [bare git repo](https://www.atlassian.com/git/tutorials/dotfiles)
+
 ### Submodule notes
 
 ```bash
