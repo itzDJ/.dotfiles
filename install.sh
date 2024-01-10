@@ -3,7 +3,7 @@
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo "MacOS detected"
+    echo "\nMacOS detected\n"
 
     # Install homebrew
     which -s brew # Return 0 if brew is installed
@@ -41,7 +41,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     mv ~/.dotfiles/nvim ~/.config/nvim
     echo "Run 'nvim' to finish setup"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    echo "Linux detected; Arch assumed" # TODO: Check for linux type and install accordingly (arch vs debian)
+    echo "\nLinux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
 
     # Install zsh and make it default
     sudo pacman -S zsh
