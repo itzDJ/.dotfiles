@@ -3,14 +3,15 @@
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo "\nMacOS detected\n"
+    echo "MacOS detected"
 
     # Install homebrew
     which -s brew # Return 0 if brew is installed
     if [[ $? != 0 ]]; then # if the output of the previous command is not 0,
         echo "Homebrew not found; installing..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
+        (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     else
         echo "Homebrew found; updating..."
         brew update && brew upgrade --greedy
@@ -41,7 +42,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     mv ~/.dotfiles/nvim ~/.config/nvim
     echo "Run 'nvim' to finish setup"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    echo "\nLinux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
+    echo "Linux detected; Arch assumed" # TODO: Check for linux type and install accordingly (arch vs debian)
 
     # Install zsh and make it default
     sudo pacman -S zsh
