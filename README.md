@@ -1,15 +1,9 @@
 # DJ's dotfiles
 
-## Pre-reqs (git)
-
-Both Mac and Linux require git to download this file and run the command below. For macOS, attempt to run `git` in the macOS terminal to download developer tools, which includes git. For Linux, simply install git through the built in package manager.
-
 ## Install
 
-Clone into `$HOME` directory and run install script
-
 ```bash
-git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles && /bin/bash ~/.dotfiles/install.sh
+bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
 ```
 
 ## Setup steps (should only be needed once)
