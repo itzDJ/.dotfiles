@@ -33,6 +33,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Install alacritty config
     echo "Installing alacritty config..."
+    mkdir -p ~/.config/alacritty
     mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
     # Install neovim config through git submodules
@@ -64,6 +65,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install alacritty config
     echo "Installing alacritty config..."
+    mkdir -p ~/.config/alacritty
     mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
     # Install neovim config through git submodules
