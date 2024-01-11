@@ -66,8 +66,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo pacman -S --needed - < ~/.dotfiles/pacman_packages.txt
 
     # Install aur packages
-    # printf "\nInstalling minecraft-launcher...\n"
-    # git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
+    printf "\nInstalling waybar-git...\n"
+    git clone https://aur.archlinux.org/waybar-git.git && cd waybar-git && makepkg -si && cd .. && rm -rf waybar-git
+    printf "\nInstalling swaylock-effects...\n"
+    git clone https://aur.archlinux.org/swaylock-effects.git && cd swaylock-effects && makepkg -si && cd .. && rm -rf swaylock-effects
+    printf "\nInstalling minecraft-launcher...\n"
+    git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
     # TODO CONTINUE ADDING AUR PACKAGES
 
     # Install zap-zsh
