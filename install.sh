@@ -62,7 +62,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install pacman packages
-    sudo pacman -S --needed - < pacman_packages.txt
+    sudo pacman -S --needed - < ~/.dotfiles/pacman_packages.txt
 
     # Install aur packages
     # printf "\nInstalling minecraft-launcher...\n"
