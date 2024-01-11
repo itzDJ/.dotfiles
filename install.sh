@@ -4,96 +4,96 @@
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    printf "\nMacOS detected\n"
+    printf "\nMacOS detected\n\n"
 
     # Install homebrew
     if ! command -v brew &>/dev/null; then
-        printf "\nHomebrew not found; installing..."
+        printf "\nHomebrew not found; installing...\n"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else
-        printf "\nHomebrew found; updating..."
+        printf "\nHomebrew found; updating...\n"
         brew update && brew upgrade --greedy
     fi
 
     # Install git and clone dotfiles
-    printf "\nInstalling git..."
+    printf "\nInstalling git...\n"
     brew install git
-    printf "\nCloning dotfiles..."
+    printf "\nCloning dotfiles...\n"
     git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install Brewfile
-    printf "\nInstalling homebrew packages..."
+    printf "\nInstalling homebrew packages...\n"
     brew bundle install --file ~/.dotfiles/Brewfile
 
     # Install zap-zsh
-    printf "\nInstalling zap-zsh..."
+    printf "\nInstalling zap-zsh...\n"
     zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 
     # Install zsh config
-    printf "\nInstalling zsh config..."
+    printf "\nInstalling zsh config...\n"
     mv ~/.dotfiles/.zshrc ~/.zshrc
 
     # Enable press and hold for repeating keys in default macOS terminal
     defaults write com.apple.Terminal ApplePressAndHoldEnabled -bool false
 
     # Install alacritty config
-    printf "\nInstalling alacritty config..."
+    printf "\nInstalling alacritty config...\n"
     mkdir -p ~/.config/alacritty
     mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
     # Install neovim config through git submodules
-    printf "\nInstalling neovim config..."
+    printf "\nInstalling neovim config...\n"
     mv ~/.dotfiles/nvim ~/.config/nvim
-    printf "\nRun 'nvim' to finish setup"
+    printf "\nRun 'nvim' to finish setup\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    printf "\nLinux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
+    printf "\nLinux detected; Arch assumed\n\n" # TODO: Check for linux type and install accordingly (arch vs debian)
 
     # Install zsh and make it default
     sudo pacman -S zsh
     chsh -s /usr/bin/zsh
 
     # Install git and clone dotfiles
-    printf "\nInstalling git..."
+    printf "\nInstalling git...\n"
     sudo pacman -S git
-    printf "\nCloning dotfiles..."
+    printf "\nCloning dotfiles...\n"
     git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install pacman packages
     sudo pacman -S --needed - < pacman_packages.txt
 
     # Install aur packages
-    printf "\nInstalling minecraft-launcher..."
+    printf "\nInstalling minecraft-launcher...\n"
     git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
     # TODO CONTINUE ADDING AUR PACKAGES
 
     # Install zap-zsh
-    printf "\nInstalling zap-zsh..."
+    printf "\nInstalling zap-zsh...\n"
     zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 
     # Install zsh config
-    printf "\nInstalling zsh config..."
+    printf "\nInstalling zsh config...\n"
     mv ~/.dotfiles/.zshrc ~/.zshrc
 
     # Install alacritty config
-    printf "\nInstalling alacritty config..."
+    printf "\nInstalling alacritty config...\n"
     mkdir -p ~/.config/alacritty
     mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
     # Install neovim config through git submodules
-    printf "\nInstalling neovim config..."
+    printf "\nInstalling neovim config...\n"
     mv ~/.dotfiles/nvim ~/.config/nvim
-    printf "\nRun 'nvim' to finish setup"
+    printf "\nRun 'nvim' to finish setup\n"
 
     # Install DE/WM config (hyprland)
     # TODO These need to overwrite existing files
-    printf "\nInstalling DE/WM config..."
+    printf "\nInstalling DE/WM config...\n"
     mv ~/.dotfiles/hypr ~/.config/hypr
     mv ~/.dotfiles/waybar ~/.config/waybar
     mv ~/.dotfiles/wofi ~/.config/wofi
 else
-    printf "\nOS not supported. Exiting..."
+    printf "\nOS not supported. Exiting...\n"
     exit 1
 fi
 
