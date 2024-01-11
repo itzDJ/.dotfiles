@@ -1,0 +1,4 @@
+[submodule "djs-neovim"]
+	path = djs-neovim
+	url = https://github.com/itzDJ/djs-neovim
+	branch = main
