@@ -21,7 +21,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     printf "\nInstalling git...\n"
     brew install git
     printf "\nCloning dotfiles...\n"
-    git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
+    git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install Brewfile
     printf "\nInstalling homebrew packages...\n"
@@ -46,7 +46,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
-    mv ~/.dotfiles/nvim ~/.config/nvim
+    git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
     printf "\nRun 'nvim' to finish setup\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
@@ -59,7 +59,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "\nInstalling git...\n"
     sudo pacman -S git
     printf "\nCloning dotfiles...\n"
-    git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
+    git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
     # Install pacman packages
     sudo pacman -S --needed - < pacman_packages.txt
@@ -85,7 +85,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
-    mv ~/.dotfiles/nvim ~/.config/nvim
+    git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
     printf "\nRun 'nvim' to finish setup\n"
 
     # Install DE/WM config (hyprland)
