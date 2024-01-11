@@ -27,7 +27,7 @@ brew bundle dump
 
 ```bash
 # Get explicitly installed packages from pacman excluding dependencies
-pacman -Qqetn > pacman_packages.txt
+pacman -Qqen > pacman_packages.txt
 
 # Get packages installed outside of main repos (i.e. Installed from AUR)
 pacman -Qm > aur_packages.txt
