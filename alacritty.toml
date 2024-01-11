@@ -3,7 +3,7 @@
 family = "JetBrainsMono NF"
 
 [window]
-decorations = "buttonless" # Comment out on Arch Linux
+# decorations = "buttonless" # Uncomment on macOS
 dynamic_padding = true
 opacity = 0.75
 
