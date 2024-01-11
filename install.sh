@@ -65,8 +65,8 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo pacman -S --needed - < pacman_packages.txt
 
     # Install aur packages
-    printf "\nInstalling minecraft-launcher...\n"
-    git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
+    # printf "\nInstalling minecraft-launcher...\n"
+    # git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
     # TODO CONTINUE ADDING AUR PACKAGES
 
     # Install zap-zsh
@@ -90,10 +90,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install DE/WM config (hyprland)
     # TODO These need to overwrite existing files
-    printf "\nInstalling DE/WM config...\n"
-    mv ~/.dotfiles/hypr ~/.config/hypr
-    mv ~/.dotfiles/waybar ~/.config/waybar
-    mv ~/.dotfiles/wofi ~/.config/wofi
+    # printf "\nInstalling DE/WM config...\n"
+    # mv ~/.dotfiles/hypr ~/.config/hypr
+    # mv ~/.dotfiles/waybar ~/.config/waybar
+    # mv ~/.dotfiles/wofi ~/.config/wofi
 else
     printf "OS not supported. Exiting...\n"
     exit 1
