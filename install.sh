@@ -52,8 +52,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
 
     # Install zsh and make it default
-    sudo pacman -S zsh
-    chsh -s /usr/bin/zsh
+    if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
+        sudo pacman -S zsh
+        chsh -s /usr/bin/zsh
+    fi
 
     # Install git and clone dotfiles
     printf "\nInstalling git...\n"
