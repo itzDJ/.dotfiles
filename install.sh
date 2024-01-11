@@ -72,7 +72,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     git clone https://aur.archlinux.org/swaylock-effects.git && cd swaylock-effects && makepkg -si && cd .. && rm -rf swaylock-effects
     printf "\nInstalling minecraft-launcher...\n"
     git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
-    # TODO CONTINUE ADDING AUR PACKAGES
 
     # Install zap-zsh
     printf "\nInstalling zap-zsh...\n"
