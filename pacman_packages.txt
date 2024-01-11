@@ -22,6 +22,7 @@ neofetch
 neovim
 network-manager-applet
 nmap
+npm
 pavucontrol
 ripgrep
 sddm
