@@ -1,3 +1,3 @@
 [submodule "nvim"]
-	path = djs-neovim
+	path = nvim
 	url = https://github.com/itzDJ/djs-neovim
