@@ -85,16 +85,18 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
-    rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
+    rm -rf ~/.config/nvim # HACK
     git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
     printf "Run 'nvim' to finish setup\n"
 
     # Install DE/WM config (hyprland)
-    # TODO These need to overwrite existing files
-    # printf "\nInstalling DE/WM config...\n"
-    # mv ~/.dotfiles/hypr ~/.config/hypr
-    # mv ~/.dotfiles/waybar ~/.config/waybar
-    # mv ~/.dotfiles/wofi ~/.config/wofi
+    printf "\nInstalling DE/WM config...\n"
+    rm -rf ~/.config/hypr # HACK
+    mv ~/.dotfiles/hypr ~/.config/hypr
+    rm -rf ~/.config/waybar # HACK
+    mv ~/.dotfiles/waybar ~/.config/waybar
+    rm -rf ~/.config/wofi # HACK
+    mv ~/.dotfiles/wofi ~/.config/wofi
 else
     printf "OS not supported. Exiting...\n"
     exit 1
