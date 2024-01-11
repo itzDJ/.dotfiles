@@ -15,8 +15,11 @@ Consider switching from standard git repo to [bare git repo](https://www.atlassi
 ### Submodule notes
 
 ```bash
+# Create .gitmodules file
+touch .gitmodules
+
 # Once in .dotfiles git repo, add soft link to necessary repositories (ex: nvim)
-git submodule add https://github.com/itzDJ/djs-neovim
+git submodule add --force https://github.com/itzDJ/djs-neovim
 
 # Move or rename a file, directory, or symlink (ex: rename djs-neovim to nvim)
 git mv djs-neovim nvim
