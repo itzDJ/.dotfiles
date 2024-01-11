@@ -49,7 +49,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     printf "\nSetup complete\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    printf "Linux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
+    printf "Linux detected; Arch assumed\n"
+
+    # Update Arch
+    sudo pacman -Syu
 
     # Install zsh and make it default
     if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
@@ -67,10 +70,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo pacman -S --needed - < ~/.dotfiles/pacman_packages.txt
 
     # Install aur packages
-    printf "\nInstalling waybar-git...\n"
-    git clone https://aur.archlinux.org/waybar-git.git && cd waybar-git && makepkg -si && cd .. && rm -rf waybar-git
-    printf "\nInstalling swaylock-effects...\n"
-    git clone https://aur.archlinux.org/swaylock-effects.git && cd swaylock-effects && makepkg -si && cd .. && rm -rf swaylock-effects
     printf "\nInstalling minecraft-launcher...\n"
     git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
 
@@ -92,16 +91,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     rm -rf ~/.config/nvim # HACK
     git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
 
-    # Install DE/WM config (hyprland)
-    printf "\nInstalling DE/WM config...\n"
-    rm -rf ~/.config/hypr # HACK
-    mv ~/.dotfiles/hypr ~/.config/hypr
-    rm -rf ~/.config/waybar # HACK
-    mv ~/.dotfiles/waybar ~/.config/waybar
-    rm -rf ~/.config/wofi # HACK
-    mv ~/.dotfiles/wofi ~/.config/wofi
+    # Install WM (qtile) config
+    printf "\nInstalling WM (qtile) config...\n"
+    mv ~/.dotfiles/qtile.py ~/.config/qtile/config.py
 
-    printf "\nReboot to finish setup"
+    printf "\nReboot to finish setup\n"
 else
     printf "OS not supported. Exiting...\n"
     exit 1
