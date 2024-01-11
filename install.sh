@@ -46,7 +46,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
     git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
-    printf "Run 'nvim' to finish setup\n"
+
+    printf "\nSetup complete\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
 
@@ -90,7 +91,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK
     git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
-    printf "Run 'nvim' to finish setup\n"
 
     # Install DE/WM config (hyprland)
     printf "\nInstalling DE/WM config...\n"
@@ -100,6 +100,8 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mv ~/.dotfiles/waybar ~/.config/waybar
     rm -rf ~/.config/wofi # HACK
     mv ~/.dotfiles/wofi ~/.config/wofi
+
+    printf "\nReboot to finish setup"
 else
     printf "OS not supported. Exiting...\n"
     exit 1
