@@ -8,7 +8,7 @@ bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
 
 ## NOTE
 
-Neovim config is added despite not being in this repository; it is installed through the install script.
+Neovim config is added through its own repo
 
 ## Setup steps (should only be needed once)
 
