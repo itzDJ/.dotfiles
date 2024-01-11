@@ -4,7 +4,7 @@
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    printf "\nMacOS detected\n\n"
+    printf "MacOS detected\n"
 
     # Install homebrew
     if ! command -v brew &>/dev/null; then
@@ -45,10 +45,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
+    rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
     mv ~/.dotfiles/nvim ~/.config/nvim
     printf "\nRun 'nvim' to finish setup\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    printf "\nLinux detected; Arch assumed\n\n" # TODO: Check for linux type and install accordingly (arch vs debian)
+    printf "Linux detected; Arch assumed\n" # TODO: Check for linux type and install accordingly (arch vs debian)
 
     # Install zsh and make it default
     sudo pacman -S zsh
@@ -83,6 +84,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
+    rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
     mv ~/.dotfiles/nvim ~/.config/nvim
     printf "\nRun 'nvim' to finish setup\n"
 
@@ -93,7 +95,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mv ~/.dotfiles/waybar ~/.config/waybar
     mv ~/.dotfiles/wofi ~/.config/wofi
 else
-    printf "\nOS not supported. Exiting...\n"
+    printf "OS not supported. Exiting...\n"
     exit 1
 fi
 
