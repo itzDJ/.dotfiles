@@ -1,6 +1,5 @@
 #!/bin/bash
-##### Install script for dotfiles #####
-# TODO Script is currently for installing on new machine; make it work for updating as well
+##### Install / update script for dotfiles #####
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -59,7 +58,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install git and clone dotfiles
     printf "\nInstalling git...\n"
-    sudo pacman -S git
+    sudo pacman -S --needed git
     printf "\nCloning dotfiles...\n"
     git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
