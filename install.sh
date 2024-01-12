@@ -93,7 +93,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install WM (qtile) config
     printf "\nInstalling WM (qtile) config...\n"
-    mv ~/.dotfiles/qtile_config.py ~/.config/qtile/config.py
+    mv ~/.dotfiles/qtile ~/.config/qtile
 
     printf "\nReboot to finish setup\n"
 else
