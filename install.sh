@@ -69,10 +69,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Install pacman packages
     sudo pacman -S --needed - < ~/.dotfiles/pacman_packages.txt
 
-    # Install aur packages
-    printf "\nInstalling minecraft-launcher...\n"
-    git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
-
     # Install zap-zsh
     printf "\nInstalling zap-zsh...\n"
     zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
@@ -86,14 +82,30 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mkdir -p ~/.config/alacritty
     mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
-    # Install neovim config through git submodules
+    # Install neovim config through its git repo
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK
     git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
 
-    # Install WM (qtile) config
-    printf "\nInstalling WM (qtile) config...\n"
-    mv ~/.dotfiles/qtile ~/.config/qtile
+    # Install WM config
+    printf "\nInstalling WM config...\n"
+    mv ~/.dotfiles/hypr ~/.config/hypr
+    mv ~/.dotfiles/waybar ~/.config/waybar
+    mv ~/.dotfiles/wofi ~/.config/wofi
+
+    # Install aur packages
+    printf "\nInstalling aur packages...\n"
+    printf "\nInstalling hyprpicker...\n"
+    git clone https://aur.archlinux.org/hyprpicker.git && cd hyprpicker && makepkg -si && cd .. && rm -rf hyprpicker
+
+    printf "\nInstalling hypridle...\n"
+    git clone https://aur.archlinux.org/hypridle.git && cd hypridle && makepkg -si && cd .. && rm -rf hypridle
+
+    printf "\nInstalling hyprlock...\n"
+    git clone https://aur.archlinux.org/hyprlock.git && cd hyprlock && makepkg -si && cd .. && rm -rf hyprlock
+
+    printf "\nInstalling minecraft-launcher...\n"
+    git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
 
     printf "\nReboot to finish setup\n"
 else
