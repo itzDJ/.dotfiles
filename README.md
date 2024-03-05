@@ -16,14 +16,14 @@ Neovim config is added through its own repo
 
 Consider switching from standard git repo to [bare git repo](https://www.atlassian.com/git/tutorials/dotfiles)
 
-### Homebrew packages
+### macOS: homebrew packages
 
 ```bash
 # Create a Brewfile (all installed packages)
 brew bundle dump
 ```
 
-### Arch packages
+### Arch: pacman and AUR packages
 
 ```bash
 # Get explicitly installed packages from pacman excluding dependencies
