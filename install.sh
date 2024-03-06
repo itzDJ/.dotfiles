@@ -52,7 +52,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n"
 
     # Update Arch
-    sudo pacman -Syu
+    sudo pacman -Syu --noconfirm
 
     # Install zsh and make it default
     if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
@@ -62,12 +62,17 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install git and clone dotfiles
     printf "\nInstalling git...\n"
-    sudo pacman -S --needed git
+    sudo pacman -S --needed --noconfirm git
     printf "\nCloning dotfiles...\n"
     git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
-    # Install pacman packages
-    sudo pacman -S --needed - < ~/.dotfiles/pacman_packages.txt
+    # Install yay and other packages
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
+    yay -S --needed --noconfirm - < ~/.dotfiles/arch_packages.txt
 
     # Install zap-zsh
     printf "\nInstalling zap-zsh...\n"
@@ -92,20 +97,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mv ~/.dotfiles/hypr ~/.config/hypr
     mv ~/.dotfiles/waybar ~/.config/waybar
     mv ~/.dotfiles/wofi ~/.config/wofi
-
-    # Install aur packages
-    printf "\nInstalling aur packages...\n"
-    printf "\nInstalling hyprpicker...\n"
-    git clone https://aur.archlinux.org/hyprpicker.git && cd hyprpicker && makepkg -si && cd .. && rm -rf hyprpicker
-
-    printf "\nInstalling hypridle...\n"
-    git clone https://aur.archlinux.org/hypridle.git && cd hypridle && makepkg -si && cd .. && rm -rf hypridle
-
-    printf "\nInstalling hyprlock...\n"
-    git clone https://aur.archlinux.org/hyprlock.git && cd hyprlock && makepkg -si && cd .. && rm -rf hyprlock
-
-    printf "\nInstalling minecraft-launcher...\n"
-    git clone https://aur.archlinux.org/minecraft-launcher.git && cd minecraft-launcher && makepkg -si && cd .. && rm -rf minecraft-launcher
 
     printf "\nReboot to finish setup\n"
 else
