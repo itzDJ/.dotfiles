@@ -23,12 +23,9 @@ Consider switching from standard git repo to [bare git repo](https://www.atlassi
 brew bundle dump
 ```
 
-### Arch: pacman and AUR packages
+### Arch packages
 
 ```bash
-# Get explicitly installed packages from pacman excluding dependencies
-pacman -Qqen > pacman_packages.txt
-
-# Get packages installed outside of main repos (i.e. Installed from AUR)
-pacman -Qm > aur_packages.txt
+# Creates a file with all packages explicitly installed and not required as dependencies
+yay -Qqet > arch_packages.txt
 ```
