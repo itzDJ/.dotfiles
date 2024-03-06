@@ -94,8 +94,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Install WM config
     printf "\nInstalling WM config...\n"
+    rm -rf ~/.config/hypr # HACK
     mv ~/.dotfiles/hypr ~/.config/hypr
+    rm -rf ~/.config/waybar # HACK
     mv ~/.dotfiles/waybar ~/.config/waybar
+    rm -rf ~/.config/wofi # HACK
     mv ~/.dotfiles/wofi ~/.config/wofi
 
     printf "\nReboot to finish setup\n"
