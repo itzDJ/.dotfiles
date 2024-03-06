@@ -26,6 +26,9 @@ brew bundle dump
 ### Arch packages
 
 ```bash
-# Creates a file with all packages explicitly installed and not required as dependencies
-yay -Qqet > arch_packages.txt
+# Removing unused packages (orphans)
+yay -Qdtq | yay -Rns -
+
+# Creates a file with all explicitly installed packages
+yay -Qqe > arch_packages.txt
 ```
