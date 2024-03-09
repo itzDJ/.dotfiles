@@ -1,10 +1,10 @@
 alacritty
 base
 base-devel
+brave-bin
 btrfs-progs
 copyq
 discord
-dolphin
 dunst
 firefox
 git
@@ -28,6 +28,8 @@ lsd
 man-db
 minecraft-launcher
 minecraft-launcher-debug
+moreutils
+nemo
 neofetch
 neovim
 npm
