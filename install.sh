@@ -1,5 +1,7 @@
 #!/bin/bash
 ##### Install / update script for dotfiles #####
+# TODO: Simplify. Ex: the install for .zshrc is the same in both MacOS and Linux. Just make it one command opposed to being in both the MacOS and Linux sections
+# TODO: Maybe fix the HACK (rm -rf then mv) by using cp -r
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -101,6 +103,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     rm -rf ~/.config/wofi # HACK
     mv ~/.dotfiles/wofi ~/.config/wofi
 
+    # Misc setup
+    printf "\nSetting up misc...\n"
+    # Setup Nemo
+    xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+    gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
+
     printf "\nReboot to finish setup\n"
 else
     printf "OS not supported. Exiting...\n"
@@ -108,4 +116,4 @@ else
 fi
 
 # Remove dotfiles directory
-rm -rf ~/.dotfiles
+# rm -rf ~/.dotfiles

@@ -1,37 +1,40 @@
-* {
-    border-radius: 3px;
-    border: none;
-}
-
 window {
-    font-size: 18px;
-    font-family: "Roboto Mono Medium", sans-serif;
-    background-color: rgba(50, 50, 50, 0.9);
-    color: #ffffff;
-    border-bottom: 3px solid white;
+    background-color: #171717;
 }
 
-#entry {
-    padding: 0.25em;
+* {
+    font-family: "Fira Code";
+    color: #fff;
 }
 
-#entry:selected {
-    background-color: #bbccdd;
-    background: linear-gradient(90deg, #bbccdd, #cca5dd);
-    color: #333333;
-}
-
-#text:selected {
-    color: #333333;
+#scroll {
+    padding: 0.5rem;
 }
 
 #input {
-    background-color: rgba(50, 50, 50, 0.5);
-    color: #ffffff;
-    padding: 0.25em;
+    background-color: #262626;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    font-size: 1rem;
+    padding: 0.5rem;
 }
 
-image {
-    margin-left: 0.25em;
-    margin-right: 0.25em;
+#inner-box {
+    margin: 0.5rem;
+    font-size: 1rem;
+}
+
+#img {
+    margin: 10px 10px;
+}
+
+#entry {
+    border-radius: 0.5rem;
+}
+
+#entry:selected {
+    background-color: #262626;
+    outline: none;
 }

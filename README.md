@@ -6,6 +6,11 @@
 bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
 ```
 
+## TODO
+
+- Continue waybar config
+- Add SDDM config
+
 ## NOTE
 
 Neovim config is added through its own repo
