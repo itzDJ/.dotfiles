@@ -47,7 +47,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Install neovim config through git submodules
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
-    git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
+    git clone https://github.com/itzDJ/djvim ~/.config/nvim
 
     printf "\nSetup complete\n"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -92,7 +92,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Install neovim config through its git repo
     printf "\nInstalling neovim config...\n"
     rm -rf ~/.config/nvim # HACK
-    git clone https://github.com/itzDJ/djs-neovim ~/.config/nvim
+    git clone https://github.com/itzDJ/djvim ~/.config/nvim
 
     # Install WM config
     printf "\nInstalling WM config...\n"
