@@ -1,0 +1,38 @@
+# Arch Linux Manual Installation Guide
+
+iwctl
+station *name* scan
+station *name* connect *SSID*
+exit
+ping archlinux.org -c3
+timedatectl
+
+cfdisk
+mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot/efi
+swapon /dev/sda2
+
+pacstrap -K /mnt base linux linux-firmware base-devel grub efibootmgr networkmanager neovim
+genfstab -U /mnt > /mnt/etc/fstab
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+hwclock --systohc
+
+nvim /etc/locale.gen # Uncomment en_US.UTF-8 UTF-8
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "arch" > /etc/hostname
+
+passwd
+systemctl enable NetworkManager.service
+grub-install # is `/dev/sda` needed after grub-install?
+grub-mkconfig -o /boot/grub/grub.cfg
+useradd -m -G wheel *username*
+passwd *username*
+EDITOR=nvim visudo # Uncomment %wheel ALL=(ALL) ALL
+
+exit
+umount -R /mnt
+reboot
+
+# Run install script
