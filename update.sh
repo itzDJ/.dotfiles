@@ -25,9 +25,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     mv arch_packages.txt ~/.dotfiles/arch
 
     cp ~/.zprofile ~/.dotfiles/arch/.zprofile
+
     cp -r ~/.config/hypr ~/.dotfiles/arch
     cp -r ~/.config/waybar ~/.dotfiles/arch
     cp -r ~/.config/wofi ~/.dotfiles/arch
+
+    cp ~/.config/neofetch/config.conf ~/.dotfiles/arch/neofetch.conf
 else
     printf "OS not supported. Exiting...\n"
     exit 1
