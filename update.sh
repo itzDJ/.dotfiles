@@ -13,10 +13,13 @@ cp ~/.config/alacritty/alacritty.toml ~/.dotfiles/alacritty.toml
 # OS specific configs
 if [[ "$OSTYPE" == "darwin"* ]]; then
     printf "MacOS detected\n"
+    # Create a Brewfile (all installed packages)
     brew bundle dump
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n"
+    # Removing unused packages (orphans)
     yay -Qdtq | ifne yay -Rns -
+    # Creates a file with all explicitly installed packages
     yay -Qqe > arch_packages.txt
 
     cp -r ~/.config/hypr ~/.dotfiles
