@@ -4,9 +4,9 @@
 
 # Check OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    /bin/bash mac/install.sh
+    bash ./mac/install.sh
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    /bin/bash arch/install.sh
+    bash ./arch/install.sh
 else
     printf "OS not supported. Exiting...\n"
     exit 1
