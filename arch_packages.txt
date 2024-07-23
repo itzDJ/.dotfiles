@@ -5,6 +5,7 @@ brave-bin
 btrfs-progs
 copyq
 discord
+dropbox
 dunst
 efibootmgr
 git
@@ -20,6 +21,7 @@ hyprpaper
 hyprpicker
 intel-ucode
 iwd
+keepassxc
 libpulse
 linux
 linux-firmware
