@@ -30,6 +30,7 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 # Install zsh config
 printf "\nInstalling zsh config...\n"
 mv ~/.dotfiles/mac/.zshrc ~/.zshrc
+mv ~/.dotfiles/arch/.zprofile ~/.zprofile
 
 # Install alacritty config
 printf "\nInstalling alacritty config...\n"

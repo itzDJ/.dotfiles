@@ -24,6 +24,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     yay -Qqe > arch_packages.txt
     mv arch_packages.txt ~/.dotfiles/arch
 
+    cp ~/.zprofile ~/.dotfiles/arch/.zprofile
     cp -r ~/.config/hypr ~/.dotfiles/arch
     cp -r ~/.config/waybar ~/.dotfiles/arch
     cp -r ~/.config/wofi ~/.dotfiles/arch
