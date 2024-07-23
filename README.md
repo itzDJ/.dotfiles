@@ -14,7 +14,7 @@ bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/update.sh)
 
 ## TODO
 
+- Redo waybar config
 - Readd neovim through git submodules?
-- Continue waybar config
-- Add SDDM config
-- Consider switching from standard git repo to [bare git repo](https://www.atlassian.com/git/tutorials/dotfiles)
+- Add SDDM instead of TTY autostart?
+- Switch to [bare git repo](https://www.atlassian.com/git/tutorials/dotfiles)?
