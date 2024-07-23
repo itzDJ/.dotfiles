@@ -7,7 +7,6 @@ copyq
 discord
 dunst
 efibootmgr
-firefox
 git
 github-cli
 grub
@@ -27,6 +26,7 @@ linux-firmware
 lsd
 man-db
 moreutils
+mullvad-browser-bin
 nemo
 neofetch
 neovim
