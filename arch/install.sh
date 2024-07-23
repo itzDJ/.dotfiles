@@ -21,7 +21,7 @@ cd yay
 makepkg -si
 cd ..
 rm -rf yay
-yay -S --needed --noconfirm - < ~/.dotfiles/arch_packages.txt
+yay -S --needed --noconfirm - < ~/.dotfiles/arch/arch_packages.txt
 
 # Install zap-zsh
 printf "\nInstalling zap-zsh...\n"
@@ -29,12 +29,12 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 
 # Install zsh config
 printf "\nInstalling zsh config...\n"
-mv ~/.dotfiles/.zshrc ~/.zshrc
+mv ~/.dotfiles/mac/.zshrc ~/.zshrc
 
 # Install alacritty config
 printf "\nInstalling alacritty config...\n"
 mkdir -p ~/.config/alacritty
-mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+mv ~/.dotfiles/mac/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Install neovim config through its git repo
 printf "\nInstalling neovim config...\n"
@@ -44,11 +44,11 @@ git clone https://github.com/itzDJ/djvim ~/.config/nvim
 # Install WM config
 printf "\nInstalling WM config...\n"
 rm -rf ~/.config/hypr # HACK
-mv ~/.dotfiles/hypr ~/.config/hypr
+mv ~/.dotfiles/arch/hypr ~/.config/hypr
 rm -rf ~/.config/waybar # HACK
-mv ~/.dotfiles/waybar ~/.config/waybar
+mv ~/.dotfiles/arch/waybar ~/.config/waybar
 rm -rf ~/.config/wofi # HACK
-mv ~/.dotfiles/wofi ~/.config/wofi
+mv ~/.dotfiles/arch/wofi ~/.config/wofi
 
 # Misc setup
 printf "\nSetting up misc...\n"
