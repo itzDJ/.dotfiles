@@ -19,7 +19,7 @@ git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
 # Install Brewfile
 printf "\nInstalling homebrew packages...\n"
-brew bundle install --file ~/.dotfiles/Brewfile
+brew bundle install --file ~/.dotfiles/mac/Brewfile
 
 # Install zap-zsh
 printf "\nInstalling zap-zsh...\n"
@@ -27,7 +27,7 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 
 # Install zsh config
 printf "\nInstalling zsh config...\n"
-mv ~/.dotfiles/.zshrc ~/.zshrc
+mv ~/.dotfiles/mac/.zshrc ~/.zshrc
 
 # Enable press and hold for repeating keys in default macOS terminal
 defaults write com.apple.Terminal ApplePressAndHoldEnabled -bool false
@@ -35,7 +35,7 @@ defaults write com.apple.Terminal ApplePressAndHoldEnabled -bool false
 # Install alacritty config
 printf "\nInstalling alacritty config...\n"
 mkdir -p ~/.config/alacritty
-mv ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+mv ~/.dotfiles/mac/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Install neovim config through git submodules
 printf "\nInstalling neovim config...\n"
