@@ -51,6 +51,10 @@ mv ~/.dotfiles/arch/waybar ~/.config/waybar
 rm -rf ~/.config/wofi # HACK
 mv ~/.dotfiles/arch/wofi ~/.config/wofi
 
+# Install neofetch config
+printf "\nInstalling neofetch config...\n"
+mv ~/.dotfiles/arch/neofetch.conf ~/.config/neofetch/config.conf
+
 # Misc setup
 printf "\nSetting up misc...\n"
 # Setup Nemo
