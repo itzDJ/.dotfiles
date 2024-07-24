@@ -1,9 +1,7 @@
 # Arch Linux Manual Installation Guide
 
-iwctl
-station *name* scan
-station *name* connect *SSID*
-exit
+iwctl station *name* scan
+iwctl station *name* connect *SSID*
 ping archlinux.org -c3
 timedatectl
 
