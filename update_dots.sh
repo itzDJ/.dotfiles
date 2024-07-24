@@ -2,6 +2,7 @@
 
 # Script needed since I'm not using a git bare repo or stow
 
+rm -rf ~/.dotfiles
 cd $HOME
 git clone https://github.com/itzDJ/.dotfiles
 cd .dotfiles

@@ -13,4 +13,4 @@ else
 fi
 
 # Remove dotfiles directory
-# rm -rf ~/.dotfiles
+rm -rf ~/.dotfiles
