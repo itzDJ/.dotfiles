@@ -16,11 +16,13 @@ printf "\nCloning dotfiles...\n"
 git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 
 # Install yay and other packages
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+if ! command -v yay &>/dev/null; then
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
+fi
 yay -S --needed --noconfirm - < ~/.dotfiles/arch/arch_packages.txt
 
 # Install zap-zsh
