@@ -62,5 +62,7 @@ printf "\nSetting up misc...\n"
 # Setup Nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
+# Enable mullvad-vpn
+systemctl enable mullvad-daemon.service
 
 printf "\nReboot to finish setup\n"
