@@ -29,6 +29,7 @@ lsd
 man-db
 moreutils
 mullvad-browser-bin
+mullvad-vpn-bin
 nemo
 neofetch
 neovim
