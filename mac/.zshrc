@@ -12,4 +12,8 @@ autoload -Uz compinit
 compinit
 
 # Aliases
-alias vim="nvim"
+alias sudo='sudo '
+alias vim=nvim
+
+# Env variables
+export EDITOR=nvim
