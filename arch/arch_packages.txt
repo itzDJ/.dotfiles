@@ -49,6 +49,7 @@ ripgrep
 signal-desktop
 tmux
 torbrowser-launcher
+transmission-cli
 ttf-jetbrains-mono-nerd
 unzip
 waybar
