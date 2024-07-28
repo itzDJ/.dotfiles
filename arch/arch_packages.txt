@@ -8,6 +8,7 @@ discord
 dropbox
 dunst
 efibootmgr
+element-desktop
 git
 github-cli
 grub
@@ -34,6 +35,7 @@ nemo
 neofetch
 neovim
 networkmanager
+nmap
 npm
 pavucontrol
 pipewire
