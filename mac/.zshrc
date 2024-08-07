@@ -16,4 +16,8 @@ alias sudo='sudo '
 alias vim=nvim
 
 # Env variables
+export VISUAL=nvim
 export EDITOR=nvim
+
+# Exports
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
