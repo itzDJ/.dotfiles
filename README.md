@@ -9,7 +9,7 @@ bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
 ## Update local config to github
 
 ```bash
-bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/update.sh)
+bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/update_dots.sh)
 ```
 
 ## TODO
