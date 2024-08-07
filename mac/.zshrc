@@ -20,4 +20,4 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # Exports
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"  # Uncomment on macOS
