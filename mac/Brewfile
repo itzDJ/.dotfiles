@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "modularml/packages"
 brew "icu4c"
 brew "lz4"
 brew "xz"
