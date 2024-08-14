@@ -5,10 +5,8 @@ brave-bin
 btrfs-progs
 copyq
 discord
-dropbox
 dunst
 efibootmgr
-element-desktop
 git
 github-cli
 grub
@@ -26,10 +24,8 @@ keepassxc
 libpulse
 linux
 linux-firmware
-lsd
 man-db
 moreutils
-mullvad-browser-bin
 mullvad-vpn-bin
 nemo
 neofetch
