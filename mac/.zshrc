@@ -9,10 +9,14 @@ plug "zsh-users/zsh-syntax-highlighting"
 autoload -Uz compinit
 compinit
 
-# Aliases
-alias sudo='sudo '
-alias vim=nvim
+# Path
+export PATH="$PATH:/opt/nvim-macos-arm64/bin"
 
 # Env variables
 export VISUAL=nvim
 export EDITOR=nvim
+
+# Aliases
+alias sudo='sudo '
+alias vim=nvim
+alias nvim-update='sudo bash /opt/nvim-update.sh'
