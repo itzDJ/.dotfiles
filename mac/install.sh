@@ -28,6 +28,7 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 # Install zsh config
 printf "\nInstalling zsh config...\n"
 mv ~/.dotfiles/mac/.zshrc ~/.zshrc
+source ~/.zshrc
 
 # Enable press and hold for repeating keys in default macOS terminal
 defaults write com.apple.Terminal ApplePressAndHoldEnabled -bool false
@@ -39,7 +40,8 @@ mv ~/.dotfiles/mac/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Install neovim and its config through its git repo
 printf "\nInstalling neovim and its config...\n"
-bash ~/.dotfiles/mac/nvim-update.sh
+sudo mv ~/.dotfiles/mac/nvim-update.sh /opt
+nvim-update
 rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
 git clone https://github.com/itzDJ/djvim ~/.config/nvim
 
