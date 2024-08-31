@@ -37,8 +37,9 @@ printf "\nInstalling alacritty config...\n"
 mkdir -p ~/.config/alacritty
 mv ~/.dotfiles/mac/alacritty.toml ~/.config/alacritty/alacritty.toml
 
-# Install neovim config through git submodules
-printf "\nInstalling neovim config...\n"
+# Install neovim and its config through its git repo
+printf "\nInstalling neovim and its config...\n"
+bash ~/.dotfiles/mac/nvim-update.sh
 rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
 git clone https://github.com/itzDJ/djvim ~/.config/nvim
 
