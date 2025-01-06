@@ -38,10 +38,15 @@ printf "\nInstalling alacritty config...\n"
 mkdir -p ~/.config/alacritty
 mv ~/.dotfiles/mac/alacritty.toml ~/.config/alacritty/alacritty.toml
 
+# Install aerospace config
+printf "\nInstalling aerospace config...\n"
+mkdir -p ~/.config/aerospace
+mv ~/.dotfiles/mac/aerospace.toml ~/.config/aerospace/aerospace.toml
+
 # Install neovim and its config through its git repo
 printf "\nInstalling neovim and its config...\n"
-sudo mv ~/.dotfiles/mac/nvim-update.sh /opt
-nvim-update
+# sudo mv ~/.dotfiles/mac/nvim-update.sh /opt
+# nvim-update
 rm -rf ~/.config/nvim # HACK Find way to combine this with the next line
 git clone https://github.com/itzDJ/djvim ~/.config/nvim
 
