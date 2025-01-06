@@ -1,5 +1,3 @@
-printf "MacOS detected\n"
-
 # Install homebrew
 if ! command -v brew &>/dev/null; then
     printf "\nHomebrew not found; installing...\n"

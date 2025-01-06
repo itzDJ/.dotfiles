@@ -1,5 +1,3 @@
-printf "Linux detected; Arch assumed\n"
-
 # Update Arch
 sudo pacman -Syu --noconfirm
 
