@@ -17,6 +17,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Create a Brewfile (all installed packages)
     brew bundle dump
     mv Brewfile ~/.dotfiles/mac
+
+    cp ~/.config/aerospace/aerospace.toml ~/.dotfiles/mac/aerospace.toml
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     printf "Linux detected; Arch assumed\n"
     # Removing unused packages (orphans)
