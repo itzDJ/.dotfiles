@@ -20,6 +20,3 @@ export EDITOR=nvim
 alias sudo='sudo '
 alias vim=nvim
 # alias nvim-update='sudo bash /opt/nvim-update.sh'
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/dj/.cache/lm-studio/bin"
