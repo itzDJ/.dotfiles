@@ -99,7 +99,7 @@ alt-f = 'fullscreen'
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
-alt-t = 'layout floating tiling'
+alt-t = 'layout floating tiling' # NOTE: use on apps that bug with aerospace
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
