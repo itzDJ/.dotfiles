@@ -91,6 +91,7 @@ outer.right =      5
 # '''
 
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
 alt-shift-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app --args --incognito'
 
