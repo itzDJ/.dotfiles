@@ -20,3 +20,8 @@ export EDITOR=nvim
 alias sudo='sudo '
 alias vim=nvim
 # alias nvim-update='sudo bash /opt/nvim-update.sh'
+
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
