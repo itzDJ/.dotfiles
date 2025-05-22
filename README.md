@@ -1,20 +1,13 @@
-# DJ's dotfiles
+# .dotfiles
 
 ## Install
 
-```bash
-bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh)
-```
-
-## Update local config to github
+Clone repo, unpack submodules, and stow files
 
 ```bash
-bash <(curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/update_dots.sh)
+git clone --recurse-submodules https://github.com/itzDJ/.dotfiles $HOME
+cd $HOME/.dotfiles
+brew bundle install
+stow env
 ```
 
-## TODO
-
-- Redo waybar config
-- Readd neovim through git submodules?
-- Add SDDM instead of TTY autostart?
-- Switch to [bare git repo](https://www.atlassian.com/git/tutorials/dotfiles)?

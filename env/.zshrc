@@ -9,9 +9,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 autoload -Uz compinit
 compinit
 
-# Path
-# export PATH="$PATH:/opt/nvim-macos-arm64/bin"
-
 # Env variables
 export VISUAL=nvim
 export EDITOR=nvim
@@ -19,9 +16,8 @@ export EDITOR=nvim
 # Aliases
 alias sudo='sudo '
 alias vim=nvim
-# alias nvim-update='sudo bash /opt/nvim-update.sh'
 
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# pyenv setup
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
