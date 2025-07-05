@@ -28,7 +28,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # OS setup
-yay -S --noconfirm --needed neovim ghostty hyprland waybar wofi pyenv npm unzip brave-bin mullvad-vpn-bin
+yay -S --noconfirm --needed neovim ghostty hyprland waybar wofi pyenv npm unzip ripgrep htop fastfetch brave-bin mullvad-vpn-bin
 # TODO: probably need to enable mullvad service here
 pyenv install 3
 pyenv global 3
@@ -43,3 +43,5 @@ ln -sf "$HOME/.dotfiles/.config/wofi" "$HOME/.config/wofi"
 
 # Install neovim (git submodules are annoying, so this is a workaround)
 git clone https://github.com/itzDJ/nvim ~/.config/nvim
+
+# TODO: REBOOT / prompt to reboot
