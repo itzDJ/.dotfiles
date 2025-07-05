@@ -14,5 +14,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 # Aliases
-alias sudo='sudo '
+alias sudo="sudo "
 alias vim=nvim
