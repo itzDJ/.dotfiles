@@ -23,19 +23,18 @@ rm -rf yay
 # Zsh setup
 yay -S --noconfirm --needed zsh
 chsh -s $(which zsh)
-# TODO: installing ohmyzsh may interrupt script since it switches shell on complete. fix this
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# OS setup
+# OS setup (each line has deps following main software other than the last)
 yay -S --noconfirm --needed \
-    neovim pyenv npm unzip ripgrep \ # neovim and deps
-    ghostty \ # terminal
-    hyprland uwsm libnewt \ # hyprland and deps
-    waybar otf-font-awesome \ # waybar and deps
-    wofi \ # app launcher
-    htop fastfetch brave-bin mullvad-vpn-bin # other programs
+    neovim pyenv npm ripgrep unzip \
+    ghostty \
+    hyprland uwsm libnewt \
+    waybar otf-font-awesome \
+    wofi \
+    htop fastfetch brave-bin mullvad-vpn-bin
 # TODO: probably need to enable mullvad service here
 pyenv install 3
 pyenv global 3
@@ -51,5 +50,10 @@ ln -sf "$HOME/.dotfiles/.config/wofi" "$HOME/.config/wofi"
 # Install neovim config (git submodules are annoying, so this is a workaround)
 git clone https://github.com/itzDJ/nvim ~/.config/nvim
 
-# TODO: reboot automatically / prompt for user click enter to reboot
-echo "reboot to finish"
+# Reboot to finish install
+echo -n "Rebooting in "
+for i in {3..1}; do
+    echo -n "$i..."
+    sleep 1
+done
+reboot
