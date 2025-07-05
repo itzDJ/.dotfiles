@@ -58,4 +58,4 @@ for i in {3..1}; do
     echo -n "$i..."
     sleep 1
 done
-reboot
+sudo systemctl reboot
