@@ -23,13 +23,19 @@ rm -rf yay
 # Zsh setup
 yay -S --noconfirm --needed zsh
 chsh -s $(which zsh)
+# TODO: installing ohmyzsh may interrupt script since it switches shell on complete. fix this
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # OS setup
-# perhaps convert package installs to file or at least organize / label dependencies
-yay -S --noconfirm --needed neovim ghostty hyprland uwsm libnewt waybar otf-font-awesome wofi pyenv npm unzip ripgrep htop fastfetch brave-bin mullvad-vpn-bin
+yay -S --noconfirm --needed \
+    neovim pyenv npm unzip ripgrep \ # neovim and deps
+    ghostty \ # terminal
+    hyprland uwsm libnewt \ # hyprland and deps
+    waybar otf-font-awesome \ # waybar and deps
+    wofi \ # app launcher
+    htop fastfetch brave-bin mullvad-vpn-bin # other programs
 # TODO: probably need to enable mullvad service here
 pyenv install 3
 pyenv global 3
@@ -42,7 +48,8 @@ ln -sf "$HOME/.dotfiles/.config/hypr" "$HOME/.config/hypr"
 ln -sf "$HOME/.dotfiles/.config/waybar" "$HOME/.config/waybar"
 ln -sf "$HOME/.dotfiles/.config/wofi" "$HOME/.config/wofi"
 
-# Install neovim (git submodules are annoying, so this is a workaround)
+# Install neovim config (git submodules are annoying, so this is a workaround)
 git clone https://github.com/itzDJ/nvim ~/.config/nvim
 
-# TODO: REBOOT / prompt to reboot
+# TODO: reboot automatically / prompt for user click enter to reboot
+echo "reboot to finish"
