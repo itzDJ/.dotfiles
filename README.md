@@ -1,19 +1,10 @@
 # DJ's dotfiles
 
+- Dotfiles script to setup new archlinux machine
+- macOS backup files are also temp stored in repo
+
 ## Install
 
 ```bash
 curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/install.sh | bash
 ```
-
-## Update local config to github
-
-```bash
-curl https://raw.githubusercontent.com/itzDJ/.dotfiles/main/update_dots.sh | bash
-```
-
-## TODO
-
-- Redo waybar config
-- Maybe add symlinks
-- Fully split macOS and arch configs
