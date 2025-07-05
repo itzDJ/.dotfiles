@@ -1,0 +1,8 @@
+mode=drun
+width=500
+height=300
+location=center
+prompt=Run
+lines=8
+fuzzy=true
+gtk_dark=true
