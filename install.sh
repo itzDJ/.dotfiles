@@ -9,6 +9,9 @@ if [[ ! -f /etc/arch-release ]]; then
     exit 1
 fi
 
+# Cache sudo credentials
+sudo -v
+
 # Update system
 sudo pacman -Syu --noconfirm
 
@@ -22,6 +25,7 @@ rm -rf yay
 
 # Zsh setup
 yay -S --noconfirm --needed zsh
+sudo chsh -s $(which zsh) $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -34,7 +38,8 @@ yay -S --noconfirm --needed \
     waybar otf-font-awesome \
     wofi \
     htop fastfetch brave-bin mullvad-vpn-bin
-# TODO: probably need to enable mullvad service here
+# TODO: probably need to enable mullvad here
+# sudo systemctl enable mullvad-daemon.service
 pyenv install 3
 pyenv global 3
 
@@ -48,9 +53,6 @@ ln -sf "$HOME/.dotfiles/.config/wofi" "$HOME/.config/wofi"
 
 # Install neovim config (git submodules are annoying, so this is a workaround)
 git clone https://github.com/itzDJ/nvim ~/.config/nvim
-
-# Change shell to zsh right before rebooting
-chsh -s $(which zsh)
 
 # Reboot to finish install
 echo -n "Rebooting in "
