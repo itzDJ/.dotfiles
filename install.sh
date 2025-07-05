@@ -28,7 +28,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # OS setup
-yay -S --noconfirm --needed neovim ghostty hyprland waybar wofi pyenv npm unzip ripgrep htop fastfetch brave-bin mullvad-vpn-bin
+# perhaps convert package installs to file or at least organize / label dependencies
+yay -S --noconfirm --needed neovim ghostty hyprland uwsm libnewt waybar wofi pyenv npm unzip ripgrep htop fastfetch brave-bin mullvad-vpn-bin
 # TODO: probably need to enable mullvad service here
 pyenv install 3
 pyenv global 3
