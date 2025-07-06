@@ -38,7 +38,8 @@ yay -S --noconfirm --needed \
     waybar otf-font-awesome \
     wofi \
     pulseaudio pavucontrol \
-    htop fastfetch brave-bin mullvad-vpn-bin
+    htop fastfetch man-db \
+    brave-bin mullvad-vpn-bin
 # TODO: probably need to enable mullvad here
 # sudo systemctl enable mullvad-daemon.service
 pyenv install 3
