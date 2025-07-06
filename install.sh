@@ -37,6 +37,7 @@ yay -S --noconfirm --needed \
     hyprland uwsm libnewt \
     waybar otf-font-awesome \
     wofi \
+    pulseaudio pavucontrol \
     htop fastfetch brave-bin mullvad-vpn-bin
 # TODO: probably need to enable mullvad here
 # sudo systemctl enable mullvad-daemon.service
