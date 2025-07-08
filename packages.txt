@@ -34,7 +34,5 @@ copyq
 htop
 fastfetch
 man-db
-
-# AUR
 brave-bin
 mullvad-vpn-bin
