@@ -42,9 +42,6 @@ sudo systemctl enable mullvad-daemon.service
 pyenv install 3
 pyenv global 3
 
-# Create wallpapers directory
-mkdir .wallpapers
-
 # Dotfiles symlinks
 ln -sf "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/.dotfiles/.zprofile" "$HOME/.zprofile"
