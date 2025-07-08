@@ -1,0 +1,40 @@
+# Neovim and requirements for config
+neovim
+pyenv
+npm
+ripgrep
+unzip
+
+# Terminal
+ghostty
+
+# Hypr
+hyprland
+hyprpaper
+hypridle
+hyprlock
+uwsm
+libnewt
+
+# Status bar
+waybar
+otf-font-awesome
+
+# App launcher
+wofi
+
+# Sound
+pulseaudio
+pavucontrol
+
+# Clipboard manager
+copyq
+
+# Misc
+htop
+fastfetch
+man-db
+
+# AUR
+brave-bin
+mullvad-vpn-bin
