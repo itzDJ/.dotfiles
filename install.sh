@@ -34,7 +34,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Install packages (ignore lines that begin with a hashtag)
-yay -S --noconfirm --needed $(grep -v "^#" packages.txt)
+git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
+yay -S --noconfirm --needed $(grep -v "^#" $HOME/.dotfiles/packages.txt)
 
 # Setup mullvad and pyenv
 sudo systemctl enable mullvad-daemon.service
@@ -45,7 +46,6 @@ pyenv global 3
 mkdir .wallpapers
 
 # Dotfiles symlinks
-git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 ln -sf "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/.dotfiles/.zprofile" "$HOME/.zprofile"
 ln -sf "$HOME/.dotfiles/.config/hypr" "$HOME/.config/hypr"
