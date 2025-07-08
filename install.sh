@@ -41,6 +41,9 @@ sudo systemctl enable mullvad-daemon.service
 pyenv install 3
 pyenv global 3
 
+# Create wallpapers directory
+mkdir .wallpapers
+
 # Dotfiles symlinks
 git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 ln -sf "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
