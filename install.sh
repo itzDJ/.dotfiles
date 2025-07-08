@@ -23,6 +23,9 @@ makepkg -si --noconfirm
 cd ..
 rm -rf yay
 
+# Cleanup old bash files
+rm .bash*
+
 # Zsh setup
 yay -S --noconfirm --needed zsh
 sudo chsh -s $(which zsh) $USER
@@ -30,18 +33,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# OS setup (each line has deps following main software other than the last)
-yay -S --noconfirm --needed \
-    neovim pyenv npm ripgrep unzip \
-    ghostty \
-    hyprland uwsm libnewt \
-    waybar otf-font-awesome \
-    wofi \
-    pulseaudio pavucontrol \
-    htop fastfetch man-db \
-    brave-bin mullvad-vpn-bin
-# TODO: probably need to enable mullvad here
-# sudo systemctl enable mullvad-daemon.service
+# Install packages (ignore lines that begin with a hashtag)
+yay -S --noconfirm --needed $(grep -v "^#" packages.txt)
+
+# Setup mullvad and pyenv
+sudo systemctl enable mullvad-daemon.service
 pyenv install 3
 pyenv global 3
 
