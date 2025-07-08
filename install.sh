@@ -37,8 +37,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/itzDJ/.dotfiles $HOME/.dotfiles
 yay -S --noconfirm --needed $(grep -v "^#" $HOME/.dotfiles/packages.txt)
 
-# Setup mullvad and pyenv
-sudo systemctl enable mullvad-daemon.service
+# Setup pyenv
 pyenv install 3
 pyenv global 3
 
