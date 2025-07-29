@@ -27,12 +27,11 @@ wofi
 pulseaudio
 pavucontrol
 
-# Clipboard manager
-copyq
-
 # Misc
 htop
 fastfetch
 man-db
+7zip
+qemu-full
 brave-bin
 mullvad-vpn-bin
