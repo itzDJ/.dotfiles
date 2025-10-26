@@ -1,6 +1,5 @@
 # Neovim and requirements for config
 neovim
-pyenv
 npm
 ripgrep
 unzip
