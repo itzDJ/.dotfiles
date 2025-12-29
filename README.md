@@ -1,7 +1,6 @@
 # DJ's dotfiles
 
 - Dotfiles script to setup new archlinux machine
-- macOS backup files are also temp stored in repo
 
 ## Install
 
