@@ -18,7 +18,7 @@ sudo pacman -S --noconfirm --needed git base-devel zsh
 
 # Create standard home directories
 echo "Creating home directories..."
-for dir in Downloads Scripts Software; do
+for dir in .config Downloads Scripts Software; do
     mkdir -p "$HOME/$dir"
 done
 
