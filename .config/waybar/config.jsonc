@@ -8,6 +8,7 @@
     "modules-right": [
         "tray",
         "pulseaudio",
+        "network",
         "battery"
     ],
 
@@ -36,16 +37,24 @@
     "tray": {
         "spacing": 10
     },
+
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%",
-        "format-muted": " muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "tooltip": false
+        "format-muted": " ",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
     },
+
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "{ifname}\nIP: {ipaddr}\nSignal: {signalStrength}%",
+        "on-click": "ghostty -e nmtui"
+    },
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
@@ -55,5 +64,5 @@
             "warning": 30,
             "critical": 15
         }
-    },
+    }
 }
