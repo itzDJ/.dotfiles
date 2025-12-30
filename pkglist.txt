@@ -10,7 +10,6 @@ neovim
 npm
 otf-font-awesome
 pavucontrol
-pulseaudio
 python
 ripgrep
 unzip
