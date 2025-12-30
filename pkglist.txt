@@ -1,0 +1,17 @@
+fastfetch
+ghostty
+htop
+hyprland
+hyprlauncher
+hyprlock
+man-db
+neovim
+npm
+otf-font-awesome
+pavucontrol
+pulseaudio
+python
+ripgrep
+unzip
+waybar
+zsh-syntax-highlighting
