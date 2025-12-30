@@ -8,10 +8,10 @@ hyprlock
 man-db
 neovim
 npm
-otf-font-awesome
 pavucontrol
 python
 ripgrep
+ttf-jetbrains-mono-nerd
 unzip
 waybar
 zsh-syntax-highlighting
