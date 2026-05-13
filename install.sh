@@ -82,6 +82,7 @@ echo "Enabling user services..."
 systemctl --user enable pipewire
 systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
+sudo systemctl enable mullvad-daemon
 
 # Firewall
 echo "Configuring firewall..."
