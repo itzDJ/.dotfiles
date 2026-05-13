@@ -74,6 +74,12 @@ sudo pacman -S --noconfirm --needed "${PACMAN_PACKAGES[@]}"
 echo "Installing AUR packages..."
 yay -S --noconfirm --needed "${AUR_PACKAGES[@]}"
 
+# Services
+echo "Enabling user services..."
+systemctl --user enable pipewire
+systemctl --user enable wireplumber
+systemctl --user enable xdg-desktop-portal-hyprland
+
 # Default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then
     echo "Changing default shell to zsh..."
