@@ -2,11 +2,8 @@
 
 Dotfiles and install script for a new Arch Linux machine.
 
-## Arch Install Notes (archinstall 4.0)
-
-- Audio: pipewire
-- Firewall: ufw
-- Network configuration: Network Manager (default backend)
+> [!NOTE]
+> If using archinstall: use Network Manager (default backend)
 
 ## Install
 ```bash
