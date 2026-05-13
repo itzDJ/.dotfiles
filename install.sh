@@ -26,6 +26,7 @@ PACMAN_PACKAGES=(
     noto-fonts-emoji
     npm
     pipewire
+    pipewire-pulse
     python
     qt5-wayland
     qt6-wayland
@@ -79,6 +80,7 @@ yay -S --noconfirm --needed "${AUR_PACKAGES[@]}"
 # Services
 echo "Enabling user services..."
 systemctl --user enable pipewire
+systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
 systemctl --user enable xdg-desktop-portal-hyprland
 
