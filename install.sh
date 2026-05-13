@@ -82,6 +82,13 @@ systemctl --user enable pipewire
 systemctl --user enable wireplumber
 systemctl --user enable xdg-desktop-portal-hyprland
 
+# Firewall
+echo "Configuring firewall..."
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw --force enable
+sudo systemctl enable ufw
+
 # Default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then
     echo "Changing default shell to zsh..."
