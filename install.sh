@@ -13,13 +13,13 @@ PACMAN_PACKAGES=(
     dolphin
     dunst
     fastfetch
+    ghostty
     htop
     hyprland
     hyprlauncher
     hyprlock
     hyprpaper
     hyprpolkitagent
-    kitty
     man-db
     neovim
     npm
