@@ -9,28 +9,36 @@ set -euo pipefail
 DOTFILES="$HOME/.dotfiles"
 
 PACMAN_PACKAGES=(
+    cliphist
     dolphin
+    dunst
     fastfetch
-    ghostty
     htop
     hyprland
     hyprlauncher
     hyprlock
+    hyprpaper
+    hyprpolkitagent
+    kitty
     man-db
     neovim
     npm
-    pavucontrol
+    pipewire
     python
+    qt5-wayland
+    qt6-wayland
     ripgrep
     ttf-jetbrains-mono-nerd
     unzip
     waybar
+    wireplumber
+    xdg-desktop-portal-hyprland
     zsh
     zsh-syntax-highlighting
 )
 
 AUR_PACKAGES=(
-    brave-bin
+    brave-origin-nightly-bin
     mullvad-vpn-bin
 )
 
@@ -51,11 +59,11 @@ fi
 echo "Creating home directories..."
 mkdir -p "$HOME"/{.config,Downloads,Scripts}
 
-# Paru
-if ! command -v paru &>/dev/null; then
-    echo "Installing paru..."
-    git clone https://aur.archlinux.org/paru.git /tmp/paru
-    (cd /tmp/paru && makepkg -si --noconfirm)
+# Yay
+if ! command -v yay &>/dev/null; then
+    echo "Installing yay..."
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    (cd /tmp/yay && makepkg -si --noconfirm)
 fi
 
 # Packages
@@ -63,7 +71,7 @@ echo "Installing pacman packages..."
 sudo pacman -S --noconfirm --needed "${PACMAN_PACKAGES[@]}"
 
 echo "Installing AUR packages..."
-paru -S --noconfirm --needed "${AUR_PACKAGES[@]}"
+yay -S --noconfirm --needed "${AUR_PACKAGES[@]}"
 
 # Default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then
