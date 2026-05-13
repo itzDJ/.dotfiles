@@ -22,6 +22,8 @@ PACMAN_PACKAGES=(
     hyprpolkitagent
     man-db
     neovim
+    noto-fonts
+    noto-fonts-emoji
     npm
     pipewire
     python
