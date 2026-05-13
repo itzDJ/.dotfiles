@@ -29,6 +29,7 @@ PACMAN_PACKAGES=(
     qt6-wayland
     ripgrep
     ttf-jetbrains-mono-nerd
+    ufw
     unzip
     waybar
     wireplumber
