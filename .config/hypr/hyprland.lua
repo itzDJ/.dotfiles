@@ -44,7 +44,7 @@ local browser     = "brave-origin-nightly --enable-features=UseOzonePlatform --o
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function ()
-    hl.exec_cmd("hyprpolkitagent")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent xdg-desktop-portal-hyprland")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("waybar")
     hl.exec_cmd("wl-paste --watch cliphist store")
