@@ -82,7 +82,6 @@ echo "Enabling user services..."
 systemctl --user enable pipewire
 systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
-systemctl --user enable xdg-desktop-portal-hyprland
 
 # Firewall
 echo "Configuring firewall..."
