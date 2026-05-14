@@ -60,8 +60,8 @@
         "format-plugged": " {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 33,
+            "critical": 20
         },
         "tooltip": false
     }
