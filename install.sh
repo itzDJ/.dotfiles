@@ -101,6 +101,7 @@ fi
 echo "Creating symlinks..."
 ln -sf "$DOTFILES/.zshrc"          "$HOME/.zshrc"
 ln -sf "$DOTFILES/.zprofile"       "$HOME/.zprofile"
+ln -sf "$DOTFILES/.config/ghostty" "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/.config/hypr"    "$HOME/.config/hypr"
 ln -sf "$DOTFILES/.config/waybar"  "$HOME/.config/waybar"
 
