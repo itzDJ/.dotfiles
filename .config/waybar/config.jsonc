@@ -30,7 +30,7 @@
 
     "clock": {
         "format": "{:%H:%M}",
-        "format-alt": "{:%a %d %b}",
+        "format-alt": "{:%a %b %d}",
         "tooltip": false
     },
 
@@ -43,7 +43,7 @@
         "format": "{icon} {volume}%",
         "format-muted": " ",
         "format-icons": { "default": ["", "", ""] },
-        "on-click": "pavucontrol"
+        "tooltip": false
     },
 
     "network": {
@@ -51,8 +51,7 @@
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰤮",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "tooltip-format": "{ifname}\nIP: {ipaddr}\nSignal: {signalStrength}%",
-        "on-click": "ghostty -e nmtui"
+        "tooltip": false
     },
 
     "battery": {
@@ -63,6 +62,7 @@
         "states": {
             "warning": 30,
             "critical": 15
-        }
+        },
+        "tooltip": false
     }
 }
