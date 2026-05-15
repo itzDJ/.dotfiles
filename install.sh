@@ -9,6 +9,9 @@ set -euo pipefail
 DOTFILES="$HOME/.dotfiles"
 
 PACMAN_PACKAGES=(
+    blueman
+    bluez
+    bluez-utils
     cliphist
     dolphin
     dunst
@@ -25,6 +28,8 @@ PACMAN_PACKAGES=(
     noto-fonts
     noto-fonts-emoji
     npm
+    openssh
+    pavucontrol
     pipewire
     pipewire-pulse
     python
@@ -78,18 +83,19 @@ echo "Installing AUR packages..."
 yay -S --noconfirm --needed "${AUR_PACKAGES[@]}"
 
 # Services
-echo "Enabling user services..."
+echo "Enabling services..."
 systemctl --user enable pipewire
 systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
-sudo systemctl enable mullvad-daemon
+sudo systemctl enable --now bluetooth
+sudo systemctl enable --now mullvad-daemon
 
 # Firewall
 echo "Configuring firewall..."
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw --force enable
-sudo systemctl enable ufw
+sudo systemctl enable --now ufw
 
 # Default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then

@@ -7,6 +7,7 @@
     ],
     "modules-right": [
         "tray",
+        "bluetooth",
         "pulseaudio",
         "network",
         "battery"
@@ -38,12 +39,22 @@
         "spacing": 10
     },
 
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-connected": "󰂯",
+        "format-disabled": "󰂲",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
+
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%",
         "format-muted": " ",
         "format-icons": { "default": ["", "", ""] },
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "pavucontrol"
     },
 
     "network": {
@@ -51,13 +62,14 @@
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰤮",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "ghostty -e nmtui"
     },
 
     "battery": {
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-plugged": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "states": {
             "warning": 33,
