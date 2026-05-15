@@ -12,12 +12,14 @@ PACMAN_PACKAGES=(
     blueman
     bluez
     bluez-utils
+    brightnessctl
     cliphist
     dolphin
     dunst
     fastfetch
     ghostty
     htop
+    hypridle
     hyprland
     hyprlauncher
     hyprlock
