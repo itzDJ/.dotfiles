@@ -18,6 +18,7 @@ PACMAN_PACKAGES=(
     dunst
     fastfetch
     ghostty
+    grim
     htop
     hypridle
     hyprland
@@ -38,6 +39,7 @@ PACMAN_PACKAGES=(
     qt5-wayland
     qt6-wayland
     ripgrep
+    slurp
     ttf-jetbrains-mono-nerd
     ufw
     unzip
