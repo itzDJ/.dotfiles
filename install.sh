@@ -13,13 +13,13 @@ PACMAN_PACKAGES=(
     bluez
     bluez-utils
     brightnessctl
+    btop
     cliphist
     dolphin
     dunst
     fastfetch
     ghostty
     grim
-    htop
     hypridle
     hyprland
     hyprlauncher
