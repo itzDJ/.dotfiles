@@ -269,7 +269,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" ~/Downloads/Screenshot_$(date +%H%M%S).png"))
+hl.bind(mainMod .. " + print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" ~/Documents/Screenshot_$(date +%H%M%S).png"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
