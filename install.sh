@@ -92,6 +92,7 @@ systemctl --user enable pipewire
 systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
 sudo systemctl enable --now bluetooth
+sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 sudo systemctl enable --now mullvad-daemon
 
 # Firewall
