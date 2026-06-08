@@ -51,7 +51,7 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    brave-origin-nightly-bin
+    brave-origin-bin
     mullvad-vpn-bin
 )
 
