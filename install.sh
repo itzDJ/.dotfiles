@@ -16,6 +16,7 @@ PACMAN_PACKAGES=(
     btop
     cliphist
     dolphin
+    dnsmasq
     dunst
     fastfetch
     ghostty
@@ -26,6 +27,7 @@ PACMAN_PACKAGES=(
     hyprlock
     hyprpaper
     hyprpolkitagent
+    libvirt
     man-db
     neovim
     noto-fonts
@@ -38,11 +40,13 @@ PACMAN_PACKAGES=(
     python
     qt5-wayland
     qt6-wayland
+    qemu-desktop
     ripgrep
     slurp
     ttf-jetbrains-mono-nerd
     ufw
     unzip
+    virt-manager
     waybar
     wireplumber
     xdg-desktop-portal-hyprland
@@ -70,7 +74,7 @@ fi
 
 # Directories
 echo "Creating home directories..."
-mkdir -p "$HOME"/{.config,Downloads,Scripts}
+mkdir -p "$HOME"/{.config,Documents,Downloads,Scripts}
 
 # Yay
 if ! command -v yay &>/dev/null; then
@@ -91,16 +95,22 @@ echo "Enabling services..."
 systemctl --user enable pipewire
 systemctl --user enable pipewire-pulse
 systemctl --user enable wireplumber
-sudo systemctl enable --now bluetooth
+sudo systemctl enable bluetooth
 sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
-sudo systemctl enable --now mullvad-daemon
+sudo systemctl enable --now libvirtd
+sudo usermod -aG kvm,libvirt "$USER"
+sudo virsh net-autostart default
+sudo virsh net-start default 2>/dev/null || true
 
 # Firewall
 echo "Configuring firewall..."
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw --force enable
-sudo systemctl enable --now ufw
+sudo systemctl enable ufw
+
+# Mullvad
+sudo systemctl enable mullvad-daemon
 
 # Default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then
@@ -110,11 +120,11 @@ fi
 
 # Symlinks
 echo "Creating symlinks..."
-ln -sf "$DOTFILES/.zshrc"          "$HOME/.zshrc"
-ln -sf "$DOTFILES/.zprofile"       "$HOME/.zprofile"
-ln -sf "$DOTFILES/.config/ghostty" "$HOME/.config/ghostty"
-ln -sf "$DOTFILES/.config/hypr"    "$HOME/.config/hypr"
-ln -sf "$DOTFILES/.config/waybar"  "$HOME/.config/waybar"
+ln -sf "$DOTFILES/.zshrc"              "$HOME/.zshrc"
+ln -sf "$DOTFILES/.zprofile"           "$HOME/.zprofile"
+ln -sf "$DOTFILES/.config/ghostty"     "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/.config/hypr"        "$HOME/.config/hypr"
+ln -sf "$DOTFILES/.config/waybar"      "$HOME/.config/waybar"
 
 # Neovim config
 if [[ ! -d "$HOME/.config/nvim" ]]; then
@@ -122,4 +132,10 @@ if [[ ! -d "$HOME/.config/nvim" ]]; then
     git clone https://github.com/itzDJ/nvim "$HOME/.config/nvim"
 fi
 
-echo "Done. Log out and back in to apply shell changes."
+# Reboot to finish install
+echo -n "Rebooting in "
+for i in {3..1}; do
+    echo -n "$i..."
+    sleep 1
+done
+sudo systemctl reboot
