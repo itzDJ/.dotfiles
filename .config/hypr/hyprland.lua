@@ -31,7 +31,7 @@ hl.monitor({
 local terminal    = "ghostty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
-local browser     = "brave-origin-nightly --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"
+local browser     = "brave-origin --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"
 
 
 -------------------
