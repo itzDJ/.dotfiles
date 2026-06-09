@@ -9,6 +9,7 @@ set -euo pipefail
 DOTFILES="$HOME/.dotfiles"
 
 PACMAN_PACKAGES=(
+    7zip
     blueman
     bluez
     bluez-utils
@@ -44,7 +45,6 @@ PACMAN_PACKAGES=(
     ripgrep
     slurp
     ttf-jetbrains-mono-nerd
-    ufw
     unzip
     virt-manager
     waybar
@@ -101,13 +101,6 @@ sudo systemctl enable --now libvirtd
 sudo usermod -aG kvm,libvirt "$USER"
 sudo virsh net-autostart default
 sudo virsh net-start default 2>/dev/null || true
-
-# Firewall
-echo "Configuring firewall..."
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw --force enable
-sudo systemctl enable ufw
 
 # Mullvad
 sudo systemctl enable mullvad-daemon
