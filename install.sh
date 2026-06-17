@@ -19,6 +19,7 @@ PACMAN_PACKAGES=(
     dolphin
     dnsmasq
     dunst
+    eza
     fastfetch
     ghostty
     grim
