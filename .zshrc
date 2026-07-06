@@ -17,9 +17,9 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 
 # bindkey
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
 bindkey -v
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 # prompt with git repo check
 autoload -Uz vcs_info
