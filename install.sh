@@ -8,53 +8,6 @@ set -euo pipefail
 # Variables
 DOTFILES="$HOME/.dotfiles"
 
-PACMAN_PACKAGES=(
-    7zip
-    blueman
-    bluez
-    bluez-utils
-    brightnessctl
-    btop
-    cliphist
-    dolphin
-    dnsmasq
-    dunst
-    eza
-    fastfetch
-    ghostty
-    grim
-    hypridle
-    hyprland
-    hyprlauncher
-    hyprlock
-    hyprpaper
-    hyprpolkitagent
-    libvirt
-    man-db
-    neovim
-    noto-fonts
-    noto-fonts-emoji
-    npm
-    openssh
-    pavucontrol
-    pipewire
-    pipewire-pulse
-    python
-    qt5-wayland
-    qt6-wayland
-    qemu-desktop
-    ripgrep
-    slurp
-    ttf-jetbrains-mono-nerd
-    unzip
-    virt-manager
-    waybar
-    wireplumber
-    xdg-desktop-portal-hyprland
-    zsh
-    zsh-syntax-highlighting
-)
-
 AUR_PACKAGES=(
     brave-origin-bin
     mullvad-vpn-bin
@@ -75,7 +28,7 @@ fi
 
 # Directories
 echo "Creating home directories..."
-mkdir -p "$HOME"/{.config,Documents,Downloads,Scripts}
+mkdir -p "$HOME"/{.config,documents,downloads,projects}
 
 # Yay
 if ! command -v yay &>/dev/null; then
@@ -86,7 +39,7 @@ fi
 
 # Packages
 echo "Installing pacman packages..."
-sudo pacman -S --noconfirm --needed "${PACMAN_PACKAGES[@]}"
+sudo pacman -S --noconfirm --needed - < "$DOTFILES/pkglist.txt"
 
 echo "Installing AUR packages..."
 yay -S --noconfirm --needed "${AUR_PACKAGES[@]}"
