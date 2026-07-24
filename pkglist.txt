@@ -21,6 +21,7 @@ hyprpaper
 hyprpolkitagent
 libvirt
 man-db
+mullvad-vpn
 neovim
 noto-fonts
 noto-fonts-emoji

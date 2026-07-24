@@ -10,7 +10,6 @@ DOTFILES="$HOME/.dotfiles"
 
 AUR_PACKAGES=(
     brave-origin-bin
-    mullvad-vpn-bin
 )
 
 # System update and base packages
